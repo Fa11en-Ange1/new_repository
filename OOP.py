@@ -25,28 +25,43 @@
 # 2.1 Add methods to withdraw and deposit funds to the account.
 # 2.2 Use the magic __str__ method to display account information.
 
-class BankAccount:
-    def __init__(self, owner, balance=0.0):
-        self.owner = owner
-        self.balance = balance
-
-    def deposit(self, amount):
-        if amount > 0:
-            self.balance += amount
-            print(f'Deposited: {amount} units')
-        else:
-            print('Deposit amount must be greater than 0')
-
-    def withdraw(self, amount):
-        if amount > self.balance:
-            print('Insufficient funds')
-        elif amount <= 0:
-            print('Withdrawal amount must be greater than 0')
-        else:
-            self.balance -= amount
-            print(f'Withdrawn: {amount} units')
-
-    def __str__(self):
-        return f'Account Owner: {self.owner}, Balance: {self.balance:.2f} units'
-
+# class BankAccount:
+#     def __init__(self, owner, balance=0.0):
+#         self.owner = owner
+#         self.balance = balance
 #
+#     def deposit(self, amount):
+#         if amount > 0:
+#             self.balance += amount
+#             print(f'Deposited: {amount} units')
+#         else:
+#             print('Deposit amount must be greater than 0')
+#
+#     def withdraw(self, amount):
+#         if amount > self.balance:
+#             print('Insufficient funds')
+#         elif amount <= 0:
+#             print('Withdrawal amount must be greater than 0')
+#         else:
+#             self.balance -= amount
+#             print(f'Withdrawn: {amount} units')
+#
+#     def __str__(self):
+#         return f'Account Owner: {self.owner}, Balance: {self.balance:.2f} units'
+
+class Student:
+    student_count = 0
+
+    def __init__(self, name,):
+        self.name = name
+        Student.student_count += 1
+
+    @classmethod
+    def get_student_count(cls):
+        return cls.student_count
+
+student1 = Student('Anna')
+student2 = Student('Ilya')
+student3 = Student('Anton')
+
+print(student1.get_student_count())
