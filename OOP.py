@@ -65,3 +65,20 @@ student2 = Student('Ilya')
 student3 = Student('Anton')
 
 print(student1.get_student_count())
+
+
+class Book:
+    def __init__(self, title, author, year, pages):
+        self.title = title
+        self.author = autor
+        self.year = year
+        self.pages = pages
+
+        @staticmethod
+        def count_books_by_year(book_list, target_year):
+            count = 0
+            for book in book_list:
+                if book.year == target_year:
+                    count += 1
+            return count
+
