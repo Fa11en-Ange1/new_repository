@@ -27,7 +27,7 @@ def my_context():
     print(f'time has passed: {end - start:.5f}')
 
 with my_context():
-    time.sleep(2)  # цей код заміряється
+    time.sleep(2)
 
 
 #2.0
